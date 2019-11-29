@@ -1,0 +1,39 @@
+version: "v1"
+services:
+  eureka:
+    build: eureka-server
+    image: eureka
+    ports:
+      - "8761:8761"
+    expose:
+      - '8761'
+
+  provider:
+    build: service-provider
+    image: service-provider
+    ports:
+      - "2100:2100"
+      expose:
+        - '2100'
+
+  consumer:
+    build: feign-consumer
+    image: feign-consumer
+    ports:
+      - "8080:8080"
+      expose:
+        - '8080'
+  gateway:
+    build: zuul-gateway
+    image: zuul-gateway
+    ports:
+      - "9999:9999"
+      expose:
+        - '9999'
+  hystrix:
+    build: hystrix-turbine
+    image: hystrix-turbine
+    ports:
+      - "5000:5000"
+    expose:
+      - '5000'
