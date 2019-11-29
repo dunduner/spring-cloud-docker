@@ -1,5 +1,5 @@
 FROM java:jre-alpine
-MAINTAINER zhangning <253013263@qq.com>
+MAINTAINER zhangning
 COPY /target/*.jar app.jar
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
 EXPOSE 4000
