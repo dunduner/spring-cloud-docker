@@ -1,7 +1,5 @@
-FROM java:jre-alpine
+FROM java:8
 MAINTAINER zhangning
-RUN mvn clean
-RUN mvn install
 #COPY /target/*.jar app.jar
 ADD /target/*.jar app.jar
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
