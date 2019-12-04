@@ -65,7 +65,6 @@
             <!-- docker的maven插件，官网：https://github.com/spotify/docker-maven-plugin -->
 
             <!-- 1：使用插件构建Docker镜像-->
-
             <!--
             <plugin>
                 <groupId>com.spotify</groupId>
