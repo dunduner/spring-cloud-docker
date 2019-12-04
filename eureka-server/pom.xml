@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.terry</groupId>
     <artifactId>eureka-server</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>v1</version>
     <packaging>jar</packaging>
 
     <name>eureka-server</name>
@@ -106,12 +106,10 @@
                -->
 
             <!--3：将Docker镜像push到DockerHub上-->
-
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.12</version>
-
+                <version>0.4.13</version>
                 <executions>
                     <execution>
                         <id>build-image</id>
@@ -121,9 +119,9 @@
                         </goals>
                     </execution>
                 </executions>
-
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+                    <!--dockerfile文件的位置>${basedir}就是根路径-->
                     <dockerDirectory>${basedir}</dockerDirectory>
                     <resources>
                         <resource>
