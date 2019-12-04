@@ -124,7 +124,7 @@
 
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>${basedir}/src/main/resources</dockerDirectory>
+                    <dockerDirectory>${basedir}</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
