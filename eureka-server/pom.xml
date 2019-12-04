@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.terry</groupId>
     <artifactId>eureka-server</artifactId>
-    <version>v1</version>
+    <version>v1</version><!--镜像的tag-->
     <packaging>jar</packaging>
 
     <name>eureka-server</name>
     <description>Demo project for Spring Boot</description>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -104,7 +103,6 @@
                   </configuration>
               </plugin>
                -->
-
             <!--3：将Docker镜像push到DockerHub上-->
             <plugin>
                 <groupId>com.spotify</groupId>
