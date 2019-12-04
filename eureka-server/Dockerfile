@@ -1,7 +1,9 @@
-FROM java:jre-alpine
+FROM java:8
 MAINTAINER zhangning
-RUN /bin/bash -c 'mvn clean'
-RUN /bin/bash -c 'mvn install'
-#COPY /target/*.jar app.jar
-ADD /target/*.jar app.jar
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+VOLUME /tmp
+#ARG JAR_FILE
+ADD target/*.jar app.jar
+RUN bash -c 'touch /app.jar'
+EXPOSE 8761
+#COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
